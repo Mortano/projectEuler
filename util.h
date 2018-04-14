@@ -5,10 +5,16 @@
 
 namespace util{
     
-    inline constexpr bool isPrime(const uint64_t val){
-        const auto Limit = static_cast<uint64_t>(std::sqrt(val));
-        for(uint64_t v = 3; v <= Limit; v += 2){
-            if((val%v) == 0) return false;
+    inline constexpr bool isPrime(const uint64_t n){
+        if(n==2 || n==3) return true;
+        if((n%2) == 0) return false;
+        if((n%3) == 0) return false;
+        const auto Limit = static_cast<uint64_t>(std::sqrt(n));
+        uint64_t w = 2;
+        for(uint64_t v = 5; v <= Limit;){
+            if((n%v) == 0) return false;
+            v += w;
+            w = 6 - w;
         }
         return true;
     }

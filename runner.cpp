@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include "problem25.h"
+#include "20-29/problem29.h"
 
 int main()
 {
-    pr25::Run();
+    pr29::Run();
 
     std::getchar();
     
